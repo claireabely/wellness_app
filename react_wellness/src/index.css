@@ -21,6 +21,7 @@ main div {
 
 body{
   color: black;
+  
 }
 
 
@@ -28,7 +29,7 @@ h3 {
   text-align: center;
   padding: 0.5em;
   background-color: #021138;
-
+color: white;
 }
 
 
