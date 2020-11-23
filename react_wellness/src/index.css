@@ -1,27 +1,5 @@
-/* colors: https://www.canva.com/learn/website-color-schemes/ */
 
-:root {
-  --grey-blue: #a9b7c0;
-  --calm-minty: #c7d8c6;
-  --dusty-apricot: #efd9c1;
-  --cement-powder: #cccbc6;
-  --almost-white: #fcfbfa;
-  --text-shadows: 2px 2px 3px #999;
-}
 
-body {
-  margin: 0;
-  background-color: white;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-}
-
-#root > div {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
 
 main {
   flex: 1;
@@ -40,24 +18,11 @@ main div {
   border: 2px solid white;
 }
 
-header {
-  background: white;
-  padding: 1em;
-  margin-bottom: 1em;
-}
-button{
-  background-color: #1b8ef2;
-  border: 1px solid #2155f3;
-  color: white;
+
+body{
+  color: black;
 }
 
-h1,
-h3 {
-  margin: 0;
-  color: var(--almost-white);
-  text-shadow: var(--text-shadows);
- background-color: black;
-}
 
 h3 {
   text-align: center;
@@ -66,12 +31,7 @@ h3 {
 
 }
 
-footer {
-  height: 4em;
-  background-color: #021138;
-  grid-row-start: 2;
-  grid-row-end: 3;
-}
+
 
 form {
   width: 90%;
@@ -81,31 +41,9 @@ form {
   flex-wrap: wrap;
   background-color: black;
   padding: 1em;
-  color: var(--almost-white);
+
 }
 
-label {
-  flex-basis: 45%;
-  display: flex;
-  justify-content: center;
-}
-
-input[type='text'] {
-  text-align: center;
-  margin-left: 0.5em;
-  margin-bottom: 0.5em;
-  color: black;
-  padding: 0.1em 0;
-  font-size: 1em;
-}
-
-input[type='submit'] {
-  text-align: center;
-  margin-left: 1.5em;
-  background-color: var(black);
-  border: 1px solid var(--grey-blue);
-  padding: 0 3em;
-}
 
 table {
   border: none;
@@ -115,26 +53,13 @@ table {
   white;
 }
 
-th {
-  border: none;
-  color: var(--almost-white);
-  background: black;
-}
 
-tbody tr:hover {
-  opacity: 0.7;
-  color:black;
-}
-tr:nth-child(even) {
-  color: #6E6E6E;
-}
+
 #PlusCircleOutlined{
   color: #2155f3;
 }
 
-tr:nth-child(odd) {
-  color:#6E6E6E;
-}
+
 button:hover{
   opacity: 0.7;
   mix-blend-mode: darken;

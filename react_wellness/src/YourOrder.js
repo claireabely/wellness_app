@@ -3,17 +3,7 @@ import {
   DeleteOutlined,
  
 } from '@ant-design/icons';
-import { Button, notification } from 'antd';
-import { SmileOutlined } from '@ant-design/icons';
 
-const openNotification = () => {
-  notification.open({
-    message: 'Notification Title',
-    description:
-      'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
-    icon: <SmileOutlined style={{ color: '#108ee9' }} />,
-  });
-};
 
 
 class YourOrder extends Component {
@@ -23,7 +13,6 @@ class YourOrder extends Component {
         <h3>Your Order</h3>
         <h4>From Restaurant</h4>
         <div>
-          
         <table>
           <thead>
             <tr>
@@ -105,9 +94,6 @@ class YourOrder extends Component {
             </table>
           
             <button>PLACE ORDER</button>
-            <Button type="primary" onClick={openNotification}>
-    Open the notification box
-  </Button>,
             </div>
       </div>
       
