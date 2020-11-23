@@ -4,6 +4,8 @@ import Header from './components/Header'
 import MenuItems from './components/MenuItems'
 import AppMenu from './components/AppMenu'
 
+
+
 import YourOrder from './components/YourOrder'
 
 import './App.css';
@@ -24,7 +26,7 @@ class App extends Component {
       description: '',
       price: 0,
       imgURL: '',
-      lovedFoods: [],
+      updatedFoods: [],
       totalPrice: 0,
    
           collapsed: true
@@ -35,7 +37,7 @@ class App extends Component {
    this.handleChange = this.handleChange.bind(this)
    this.handleSubmit = this.handleSubmit.bind(this)
    this.handleDelete = this.handleDelete.bind(this)
-   this.addLovedFood = this.addLovedFood.bind(this)
+   this.addUpdatedFood = this.addUpdatedFood.bind(this)
    this.toggleCollapsed = this.toggleCollapsed.bind(this)
 
 
@@ -63,15 +65,15 @@ class App extends Component {
     });
   };
 
-  addLovedFood(food) {
+  addUpdatedFood(food) {
    let currentPrice= this.state.totalPrice
    let newPrice= currentPrice+food.price
-   let lovedFoods= [...this.state.lovedFoods]
-   let newLovedFoods= lovedFoods.push(food)
-   console.log(newLovedFoods)
-   console.log(this.state.lovedFoods)
+   let updatedFoods= [...this.state.updatedFoods]
+   let newUpdatedFoods= updatedFoods.push(food)
+   console.log(newUpdatedFoods)
+   console.log(this.state.updatedFoods)
    console.log(food)
-    this.setState({lovedFoods: [food,...this.state.lovedFoods], totalPrice:newPrice})
+    this.setState({updatedFoods: [food,...this.state.updatedFoods], totalPrice:newPrice})
   }
 
   handleChange(event) {
@@ -79,10 +81,10 @@ class App extends Component {
   }
 
   handleDelete(index) {
-    const newLovedFood = this.state.lovedFoods
-    newLovedFood.splice(index, 1)
+    const newUpdatedFood = this.state.updatedFoods
+    newUpdatedFood.splice(index, 1)
     this.setState({
-      lovedFood: newLovedFood
+      updatedFood: newUpdatedFood
     })
   }
 
@@ -112,17 +114,19 @@ class App extends Component {
     return (
       <div>
      
-        <Header />
+        <Header toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed} />
   
         <main>
-         <MenuItems menuItems={this.state.menuItems} addLovedFood={this.addLovedFood} handleDelete={this.handleDelete} />
-          <YourOrder foods={this.state.lovedFoods} handleDelete={this.handleDelete} total= {this.state.totalPrice}/>
+        {/* <AppMenu toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed}/> */}
+         <MenuItems menuItems={this.state.menuItems} addUpdatedFood={this.addUpdatedFood} handleDelete={this.handleDelete} />
+          <YourOrder foods={this.state.updatedFoods} handleDelete={this.handleDelete} total= {this.state.totalPrice}/>
         </main>
         <Footer />
-          {/* <div><AppMenu toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed}/></div>  */}
+      
       </div>
     )
   }
 }
 
 export default App;
+
