@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Food from './Food'
+import Food from '../Food'
 import { Card, Avatar } from 'antd';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 
@@ -11,10 +11,23 @@ const gridStyle = {
 };
 
 export default class MenuItems extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const si = this.props.item._id;
+    const sn = this.props.item.storeName;
+    const sImg = this.props.item.imgUrl;
+    this.props.updateStateRI(si, sn, sImg);
+  }
     render() {
+      console.log(this.props.menuItems)
         return (
                 <div>
-                    <h3>Menu Items</h3>
+               
 
                     
                     <div style={{display: 'flex', flexWrap: 'wrap'}}>
@@ -34,17 +47,7 @@ export default class MenuItems extends Component {
       description={food.description}
     /><button  onClick={ ()=> { this.props.addUpdatedFood(food); }}>ADD TO CART</button>
   </Card>)})}
-                         <Card name="Card Name">
-    <Card.Grid style={gridStyle}>Content</Card.Grid>
-    <Card.Grid hoverable={false} style={gridStyle}>
-      Content
-    </Card.Grid>
-    <Card.Grid style={gridStyle}>Content</Card.Grid>
-    <Card.Grid style={gridStyle}>Content</Card.Grid>
-    <Card.Grid style={gridStyle}>Content</Card.Grid>
-    <Card.Grid style={gridStyle}>Content</Card.Grid>
-    <Card.Grid style={gridStyle}>Content</Card.Grid>
-  </Card>,
+                       
                     {/* <table>
                     <thead>
                        

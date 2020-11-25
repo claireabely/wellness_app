@@ -3,10 +3,7 @@
 import React, { Component } from 'react'
 import Footer from './components/Footer'
 import Header from './components/Header'
-import MenuItems from './components/storeMenu/MenuItems'
-import Stores from './components/homePage/Stores'
-import YourOrders from './components/storeMenu/YourOrder'
-import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
+import MenuItems from './components/MenuItems'
 import AppMenu from './components/AppMenu'
 
 
@@ -29,8 +26,6 @@ class App extends Component {
       menuItems: [],
       name: '',
       description: '',
-      store_id: "",
-      _name: "",
       price: 0,
       imgURL: '',
       updatedFoods: [],
@@ -119,61 +114,20 @@ class App extends Component {
   render() {
     console.log(this.state.menuItems)
     return (
-//       <Router>
-
+      <div>
      
-//         <Header toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed} />
+        <Header toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed} />
   
-//         <main>
-//         <Switch>
-//         <Route
-//   path='/stores'
-//   render={(props) => (
-//     <Stores {...props} stores={this.state.stores} />
-//   )}
-// />
-//         {/* <Route
-//   path='/'
-//   render={(props) => (
-//     <MenuItems {...props} menuItems={this.state.menuItems} />
-//   )}
-// /> */}
-//     <Route exact path="/" component={(MenuItems, YourOrder)}>
-//     <RestaurantWidgetContainer
-//               menuItems={this.state.menuItems}
-//              name={this.state.name}
-//               store_id={this.state.store_id}
-//               price={this.state.price}
-//               imgURL={this.state.imgURL}
-//             />
-//             <Welcome />
-//           </Route>
-//         </Switch>
-//         {/* <AppMenu toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed}/> */}
-//          {/* <MenuItems menuItems={this.state.menuItems} addUpdatedFood={this.addUpdatedFood} handleDelete={this.handleDelete} /> */}
-//          {/* <YourOrder foods={this.state.updatedFoods} handleDelete={this.handleDelete} total= {this.state.totalPrice}/> */}
-//        </main>
-//         <Footer />
+        <main>
+        {/* <AppMenu toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed}/> */}
+         <MenuItems menuItems={this.state.menuItems} addUpdatedFood={this.addUpdatedFood} handleDelete={this.handleDelete} />
+          <YourOrder foods={this.state.updatedFoods} handleDelete={this.handleDelete} total= {this.state.totalPrice}/>
+        </main>
+        <Footer />
       
-//       </Router>
-//     )
-//   }
-// }
-<div>
-     
-<Header toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed} />
-
-<main>
-{/* <AppMenu toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed}/> */}
- <MenuItems menuItems={this.state.menuItems} addUpdatedFood={this.addUpdatedFood} handleDelete={this.handleDelete} />
-  <YourOrder foods={this.state.updatedFoods} handleDelete={this.handleDelete} total= {this.state.totalPrice}/>
-</main>
-<Footer />
-
-</div>
-)
-}
+      </div>
+    )
+  }
 }
 
 export default App;
-
