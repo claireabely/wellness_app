@@ -31,7 +31,7 @@ export default class MenuItems extends Component {
   >
     <Meta
       avatar={<Avatar src="https://images.squarespace-cdn.com/content/v1/5d37375de47a2a0001071628/1564517210947-0VCIOKVD0JEAXMLL499V/ke17ZwdGBToddI8pDm48kFhRgSyC8vLPbOF9ZvHOct0UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dgfDLIrqrwIwUXdScNkgdP-ANedd1qU5RhF6Jmhf5Z4ZCjLISwBs8eEdxAxTptZAUg/JP+Certification+Banner.png?format=2500w" />}
-      name={food.name}
+      name={food.storeName}
       description={food.description}
     /><button  onClick={ ()=> { this.props.addUpdatedFood(food); }}>ADD TO CART</button>
   </Card>)})}
