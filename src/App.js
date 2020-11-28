@@ -1,5 +1,4 @@
 
-
 import React, { Component } from 'react'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -9,19 +8,8 @@ import Food from './components/storeMenu/Food'
 import YourOrder from './components/storeMenu/YourOrder'
 import {BrowserRouter as Router, Switch, Route, Redirect, NavLink} from 'react-router-dom'
 import AppMenu from './components/AppMenu'
-
-
-
-
-
 import './App.css';
-
-
-
-
-
-
-
+import PastOrders from './components/PastOrders';
 
 class App extends Component {
   constructor(props) {
@@ -39,20 +27,18 @@ class App extends Component {
       populateStores: [],
       stores: [],
       store_id: "",
-      store_name: '',
-      store_img:'',
-   
-          collapsed: true
+      store_name: "",
+      store_img: "",
+      collapsed: true
         
     }
-    
-
    this.handleChange = this.handleChange.bind(this)
    this.handleSubmit = this.handleSubmit.bind(this)
    this.handleDelete = this.handleDelete.bind(this)
    this.addUpdatedFood = this.addUpdatedFood.bind(this)
    this.toggleCollapsed = this.toggleCollapsed.bind(this)
-this.populateStores = this.populateStores.bind(this)
+  //  this.handleClick = this.handleClick.bind(this)
+  // this.populatestores = this.populatestores.bind(this)
 
   }
   componentDidMount(){
@@ -79,9 +65,6 @@ this.populateStores = this.populateStores.bind(this)
     });
   }
 
-
-  
-
   toggleCollapsed = () => {
     this.setState({
       collapsed: !this.state.collapsed,
@@ -89,13 +72,13 @@ this.populateStores = this.populateStores.bind(this)
   };
 
   addUpdatedFood(food) {
-   let currentPrice= this.state.totalPrice
-   let newPrice= currentPrice+food.price
-   let updatedFoods= [...this.state.updatedFoods]
-   let newUpdatedFoods= updatedFoods.push(food)
-   console.log(newUpdatedFoods)
-   console.log(this.state.updatedFoods)
-   console.log(food)
+    let currentPrice= this.state.totalPrice
+    let newPrice= currentPrice+food.price
+    let updatedFoods= [...this.state.updatedFoods]
+    let newUpdatedFoods= updatedFoods.push(food)
+    console.log(newUpdatedFoods)
+    console.log(this.state.updatedFoods)
+    console.log(food)
     this.setState({updatedFoods: [food,...this.state.updatedFoods], totalPrice:newPrice})
   }
 
@@ -133,19 +116,30 @@ this.populateStores = this.populateStores.bind(this)
     })
   }
 
-  populateStores(index){
-    const newStores = {
-      store_name: this.state.store_name,
+  populatestores(event) {
+    let store_id= this.state.store_id
+    let store_name = this.state.store_name
+    this.setState({stores: [event,...this.state.stores]})
+  }
+  // handleClick(event) {
+  //   event.preventDefault()
+  //   store_id: this.state.store_id
+    
+    
+  // }
+
+//   populatestores(index){
+//   //   const newStores = {
+//   //     store_name: this.state.store_name,
  
-    } 
-    const populateStores = [ ...this.state.stores, newStores ]
-    this.setState({  
-       stores: populateStores, 
-       store_name: '', 
-       store_img: ''
-  });
-}
- 
+//   //   } 
+//   //   const populateStores = [ ...this.state.stores, newStores ]
+//   //   this.setState({  
+//   //      stores: populateStores, 
+//   //      store_name: '', 
+//   //      store_img: ''
+//   // });
+// }
   render() {
     console.log(this.state.menuItems)
     return (
@@ -166,24 +160,23 @@ this.populateStores = this.populateStores.bind(this)
                 Menu Items
               </NavLink>
             </li>
+            <li>
+              <NavLink 
+                to="/pastorders" 
+                activeClassName="selected">
+                Past Orders
+              </NavLink>
+            </li>
           
           </ul>
         </nav>
-
-     
         {/* <Header toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed} /> */}
-  
         <main>
         <Switch>
-        <Route
+  <Route
   path='/stores'
   render={(props) => (
-    <Stores {...props} stores={this.state.stores} 
-    store_name={this.state.store_name}
-     store_id={this.state.store_id}
-     store_img={this.state.store_img}
-     populateStores={this.populateStores} 
-     />
+    <Stores {...props} stores={this.state.stores} />
   )}
 />
          {/* <Route
@@ -193,18 +186,19 @@ this.populateStores = this.populateStores.bind(this)
  )}
 />  */}
     <Route path="/menuitems" component={(MenuItems, YourOrder, Food)}>
-    <MenuItems
-              menuItems={this.state.menuItems}
-             name={this.state.name}
-              store_id={this.state.store_id}
-              price={this.state.price}
-              imgURL={this.state.imgUrl}
-              addUpdatedFood={this.addUpdatedFood} 
-              handleDelete={this.handleDelete} 
-            />
-
-<YourOrder foods={this.state.updatedFoods} handleDelete={this.handleDelete} total= {this.state.totalPrice}/>
-           
+      <MenuItems
+                menuItems={this.state.menuItems}
+                name={this.state.name}
+                store_id={this.state.store_id}
+                price={this.state.price}
+                imgURL={this.state.imgUrl}
+                addUpdatedFood={this.addUpdatedFood} 
+                handleDelete={this.handleDelete} 
+      />
+      <YourOrder foods={this.state.updatedFoods} handleDelete={this.handleDelete} total= {this.state.totalPrice}/>     
+    </Route>
+    <Route path="/PastOrders">
+            <PastOrders />
           </Route>
         </Switch>
         {/* <AppMenu toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed}/> */}
@@ -212,11 +206,8 @@ this.populateStores = this.populateStores.bind(this)
          {/* <YourOrder foods={this.state.updatedFoods} handleDelete={this.handleDelete} total= {this.state.totalPrice}/> */}
        </main>
         <Footer />
-      
       </Router>
     )
   }
 }
-
 export default App;
-
