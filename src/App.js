@@ -39,8 +39,8 @@ class App extends Component {
       populateStores: [],
       stores: [],
       store_id: "",
-      store_name: "",
-      store_img: "",
+      store_name: '',
+      store_img:'',
    
           collapsed: true
         
@@ -178,7 +178,12 @@ this.populateStores = this.populateStores.bind(this)
         <Route
   path='/stores'
   render={(props) => (
-    <Stores {...props} stores={this.state.stores} />
+    <Stores {...props} stores={this.state.stores} 
+    store_name={this.state.store_name}
+     store_id={this.state.store_id}
+     store_img={this.state.store_img}
+     populateStores={this.populateStores} 
+     />
   )}
 />
          {/* <Route
