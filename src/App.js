@@ -4,7 +4,8 @@ import React, { Component } from 'react'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import MenuItems from './components/storeMenu/MenuItems'
-import Stores from './components/storePage/Stores'
+import Stores from './components/storeMenu/Stores'
+import Food from './components/storeMenu/Food'
 import YourOrder from './components/storeMenu/YourOrder'
 import {BrowserRouter as Router, Switch, Route, Redirect, NavLink} from 'react-router-dom'
 import AppMenu from './components/AppMenu'
@@ -35,6 +36,7 @@ class App extends Component {
       imgURL: '',
       updatedFoods: [],
       totalPrice: 0,
+      populateStores: [],
       stores: [],
       store_id: "",
       store_name: "",
@@ -50,7 +52,7 @@ class App extends Component {
    this.handleDelete = this.handleDelete.bind(this)
    this.addUpdatedFood = this.addUpdatedFood.bind(this)
    this.toggleCollapsed = this.toggleCollapsed.bind(this)
-
+this.populateStores = this.populateStores.bind(this)
 
   }
   componentDidMount(){
@@ -100,6 +102,9 @@ class App extends Component {
   handleChange(event) {
     this.setState({ [event.target.id]: event.target.value })
   }
+  // populateStore(event) {
+  //   this.setState({ [event.target.id]: event.target.value })
+  // }
 
   handleDelete(index) {
     const newUpdatedFood = this.state.updatedFoods
@@ -128,7 +133,18 @@ class App extends Component {
     })
   }
 
-
+  populateStores(index){
+    const newStores = {
+      store_name: this.state.store_name,
+ 
+    } 
+    const populateStores = [ ...this.state.stores, newStores ]
+    this.setState({  
+       stores: populateStores, 
+       store_name: '', 
+       store_img: ''
+  });
+}
  
   render() {
     console.log(this.state.menuItems)
@@ -155,7 +171,7 @@ class App extends Component {
         </nav>
 
      
-        <Header toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed} />
+        {/* <Header toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed} /> */}
   
         <main>
         <Switch>
@@ -165,23 +181,26 @@ class App extends Component {
     <Stores {...props} stores={this.state.stores} />
   )}
 />
-         <Route
+         {/* <Route
   path='/menuitems'
   render={(props) => (
     <MenuItems {...props} menuItems={this.state.menuItems} />
-    // <YourOrder {...props} foods={this.state.updatedFoods} handleDelete={this.handleDelete} total= {this.state.totalPrice}/> 
-  )}
-/> 
-    {/* <Route exact path="/" component={(MenuItems, YourOrder)}>
+ )}
+/>  */}
+    <Route path="/menuitems" component={(MenuItems, YourOrder, Food)}>
     <MenuItems
               menuItems={this.state.menuItems}
              name={this.state.name}
               store_id={this.state.store_id}
               price={this.state.price}
               imgURL={this.state.imgUrl}
+              addUpdatedFood={this.addUpdatedFood} 
+              handleDelete={this.handleDelete} 
             />
+
+<YourOrder foods={this.state.updatedFoods} handleDelete={this.handleDelete} total= {this.state.totalPrice}/>
            
-          </Route> */}
+          </Route>
         </Switch>
         {/* <AppMenu toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed}/> */}
          {/* <MenuItems menuItems={this.state.menuItems} addUpdatedFood={this.addUpdatedFood} handleDelete={this.handleDelete} /> */}
