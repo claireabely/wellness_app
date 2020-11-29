@@ -9,7 +9,7 @@ import YourOrder from './components/storeMenu/YourOrder'
 import {BrowserRouter as Router, Switch, Route, Redirect, NavLink} from 'react-router-dom'
 import AppMenu from './components/AppMenu'
 import './App.css';
-import PastOrders from './components/PastOrders';
+import Cart from './components/Cart';
 
 class App extends Component {
   constructor(props) {
@@ -162,9 +162,9 @@ class App extends Component {
             </li>
             <li>
               <NavLink 
-                to="/pastorders" 
+                to="/cart" 
                 activeClassName="selected">
-                Past Orders
+                Cart
               </NavLink>
             </li>
           
@@ -195,10 +195,10 @@ class App extends Component {
                 addUpdatedFood={this.addUpdatedFood} 
                 handleDelete={this.handleDelete} 
       />
-      <YourOrder foods={this.state.updatedFoods} handleDelete={this.handleDelete} total= {this.state.totalPrice}/>     
+      <YourOrder foods={this.state.updatedFoods} handleDelete={this.handleDelete} total= {this.state.totalPrice}  handleOrderChange = {this.handleOrderChange} handleOrderSubmit = {this.handleOrderSubmit}/>     
     </Route>
-    <Route path="/PastOrders">
-            <PastOrders />
+    <Route path="/cart">
+            <Cart />
           </Route>
         </Switch>
         {/* <AppMenu toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed}/> */}
