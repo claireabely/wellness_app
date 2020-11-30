@@ -45,7 +45,8 @@ Your body’s endocannabinoid system is closely related to your immune system be
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">St Johns Wort<i class="material-icons right">close</i></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      <p>St. John’s wort is a plant with yellow flowers that has been used in traditional European medicine as far back as the ancient Greeks. The name St. John’s wort apparently refers to John the Baptist, as the plant blooms around the time of the feast of St. John the Baptist in late June.
+Historically, St. John’s wort has been used for a variety of conditions, including kidney and lung ailments, insomnia, and depression, and to aid wound healing.</p>
     </div>
   </div>
 
@@ -59,7 +60,7 @@ Your body’s endocannabinoid system is closely related to your immune system be
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">Lavendar<i class="material-icons right">close</i></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      <p>Lavender is most commonly used in aromatherapy. The fragrance from the oils of the lavender plant is believed to help promote calmness and wellness. It's also said to help reduce stress, anxiety, and possibly even mild pain.</p>
     </div>
   </div>
   <div class="card">
@@ -72,7 +73,7 @@ Your body’s endocannabinoid system is closely related to your immune system be
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">Lemon Balm<i class="material-icons right">close</i></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      <p>(Melissa officinalis) is a lemon-scented herb that comes from the same family as mint. The herb is native to Europe, North Africa, and West Asia, but it's grown around the world. Lemon balm has traditionally been used to improve mood and cognitive function, but the potential benefits don't stop there.</p>
     </div>
   </div>
           

@@ -11,7 +11,7 @@ export default class UpdateOrderButton extends Component {
   handleClickUpdate() {
     let order_id = this.props._id;
     console.log(order_id);
-    fetch(`http://wellnessapps-api.herokuapp.com/${this.state.order_id}/edit`, {
+    fetch(`http://wellnessapps-api.herokuapp.com/${this.props.order_id}/edit`, {
       method: "PUT",
       body: JSON.stringify({
         itemsInOrder: this.props.itemsInCart_id,
@@ -33,7 +33,7 @@ export default class UpdateOrderButton extends Component {
   handleClickDelete() {
     let order_id = this.props._id;
     console.log(order_id);
-    fetch(`http://wellnessapps-api.herokuapp.com/${this.state.order_id}/delete`, {
+    fetch(`http://wellnessapps-api.herokuapp.com/${this.props.order_id}/delete`, {
       method: "DELETE",
     })
       .then((data) => {
@@ -60,10 +60,10 @@ export default class UpdateOrderButton extends Component {
     return (
       <div className="order-button-container">
       <button id="update-button" onClick={this.handleClickUpdate}>
-          Update order
+          Edit Order
         </button>
         <button id="delete-button" onClick={this.handleClickDelete}>
-          Cancel order
+          CANCEL
         </button>
       </div>
     );
