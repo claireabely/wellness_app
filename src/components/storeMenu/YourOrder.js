@@ -4,7 +4,7 @@ import {
   DeleteOutlined,
  
 } from '@ant-design/icons';
-import PlaceOrderButton from "./PlaceOrderButton";
+import PlaceOrder from "./PlaceOrder";
 
 
 
@@ -137,7 +137,7 @@ class YourOrder extends Component {
             
             </table>
         
-            <PlaceOrderButton
+            <PlaceOrder
             user_id={this.props.user_id}
             user_name={this.props.user_name}
             cart={this.props.cart}

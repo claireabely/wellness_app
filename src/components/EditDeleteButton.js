@@ -31,8 +31,9 @@ export default class UpdateOrderButton extends Component {
   }
 
   handleClickDelete() {
+    console.log(this.props);
     let order_id = this.props._id;
-    console.log(order_id);
+    console.log(this.props.order_id);
     fetch(`http://wellnessapps-api.herokuapp.com/${this.props.order_id}/delete`, {
       method: "DELETE",
     })

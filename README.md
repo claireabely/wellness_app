@@ -1,70 +1,15 @@
-# Getting Started with Create React App
+I created my wellness App Store by using react and mongo db. I created my backend database  by creating an array of objects within the Menuitems, orders and stores js files. I created two separate repositories on GitHub one for my react front end and one for my api backend. I then deployed my finished backend api to heroku and used this link to fetch data to my front end with react. My store has several different pages which can be navigated through the NavBar links. The homepage features the different categories of stores within the wellness app market and the menu items page features the items with images and prices that are within the different store categories. When add to cart is clicked on the item, the cart is added to the Your Orders component and the prices of the selected items are added together so that the customer can see the total price of their order. When the customer enters their email, name and address below the your orders total, and then presses place order, the order is placed and then rendered on the “cart” page which can be reached by clicking the link in the nav bar.  The orders in the cart are each given an individual order id #, just as they would on any online store. The order then has delete and edit functionality where the customer can cancel their most recently placed order or click edit to add or delete items from this order. Also in the nabber is the “Health Education” page where customers can read articles on the latest supplements and herbs recommended by the wellness app staff. Lastly, the “Log” link in the nav bar is a comment form where the customer can add, edit and delete notes on their wellness journey or create a shopping list to remember items that they plan to buy in the future. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+After completing this, I deployed my react frontend to heroic. 
 
-## Available Scripts
+In the future I plan to make the website more user friendly, I plan to connect the stores and menu items pages so that when you click on one category it will take you to the items for that store only. I also want to create an add edit and delete feature on the Health Education page where customers can share their favorite natural supplements.
 
-In the project directory, you can run:
+For this project, I used the following resources-
+https://www.youtube.com/watch?v=nKyrXWH5XLM
+https://medium.com/javascript-in-plain-english/fetch-using-get-post-put-delete-in-react-app-part-i-12d7496262b5
+https://stackoverflow.com/questions/6203231/which-http-methods-match-up-to-which-crud-methodshttps://reactjs.org/docs/state-and-lifecycle.html
+https://stackoverflow.com/questions/11922383/how-can-i-access-and-process-nested-objects-arrays-or-json
+https://github.com/jhcxavier/Contact_List_Mediumhttps://github.com/jhcxavier/Contact_List_Medium/blob/master/src/js/store/flux.js
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+books
+full-stack react prokects by shama hoque

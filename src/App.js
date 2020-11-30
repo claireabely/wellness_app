@@ -34,6 +34,9 @@ class App extends Component {
       store_img: "",
       collapsed: true,
       orders: [],
+      cart: [],
+      cartTotal: 0,
+      itemsInCart_id: [],
       user_id: '',
       email: '',
       delivery: true,
@@ -266,6 +269,8 @@ class App extends Component {
               orders={this.state.orders}
              handleDelete={this.handleDelete} 
              imgURL={this.state.imgUrl}
+             itemsInCart_id={this.state.itemsInCart_id}
+             emptyCart={this.emptyCart}
              />
           </Route>
           <Route path="/healtheducation">

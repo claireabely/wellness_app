@@ -3,7 +3,7 @@ import {
   DeleteOutlined,
  
 } from '@ant-design/icons';
-import UpdateOrderButton from "./UpdateOrderButton";
+import EditDeleteButton from "./EditDeleteButton";
 import Food from "./storeMenu/Food"
 class Cart extends Component {
   constructor(props) {
@@ -36,14 +36,14 @@ class Cart extends Component {
     <h6 class="card-subtitle mb-2 text-muted">User ID#:  {order.user_id}</h6>
     <h6 class="card-subtitle mb-2 text-muted">Menu Items:  {order.menuitemsName}</h6>
     <h6 class="card-subtitle mb-2 text-muted">Item ID#:  {order.item_id}</h6>
-    <div class="card-image"><img src="https://static1.squarespace.com/static/5d37375de47a2a0001071628/t/5f88c03b33250d24070ed3a4/1606228858229/?format=1500w"/>
+    <div class="card-image"><img src="https://pbs.twimg.com/profile_images/1166429774266454017/YesH37GD_400x400.jpg"/>
     <img src={order.imgURL}/></div>
     <h6 class="card-subtitle mb-2 text-muted">Quantity:  {order.quantity}</h6>
-    
+  
 
 
 <button>VIEW ORDER</button>
-<UpdateOrderButton
+<EditDeleteButton
           user_id={this.props.user_id}
           user_name={this.props.user_name}
           cart={this.props.cart}
