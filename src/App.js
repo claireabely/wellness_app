@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import MenuItems from './components/storeMenu/MenuItems'
 import Stores from './components/storeMenu/Stores'
+import HealthEducation from './components/storeMenu/HealthEducation'
 import Food from './components/storeMenu/Food'
 import YourOrder from './components/storeMenu/YourOrder'
 import {BrowserRouter as Router, Switch, Route, Redirect, NavLink} from 'react-router-dom'
@@ -49,6 +50,14 @@ class App extends Component {
   //  this.handleClick = this.handleClick.bind(this)
   // this.populatestores = this.populatestores.bind(this)
 
+  }
+  updateStateRI( sImg) {
+   
+    this.setState({
+  
+      store_img: sImg,
+     
+    });
   }
   componentDidMount(){
     fetch('http://wellnessapps-api.herokuapp.com/stores')
@@ -182,6 +191,7 @@ class App extends Component {
     return (
       <Router>
             <nav>
+            <div class="nav-wrapper black">
           <ul>
             <li>
               <NavLink 
@@ -204,8 +214,15 @@ class App extends Component {
                 Cart
               </NavLink>
             </li>
-          
+            <li>
+              <NavLink 
+                to="/healtheducation" 
+                activeClassName="selected">
+                HEALTH ED.
+              </NavLink>
+            </li>
           </ul>
+          </div>
         </nav>
         {/* <Header toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed} /> */}
         <main>
@@ -236,7 +253,14 @@ class App extends Component {
     </Route>
     <Route path="/cart">
             <Cart 
+              menuItems={this.state.menuItems}
+              orders={this.state.orders}
              handleDelete={this.handleDelete} 
+             imgURL={this.state.imgUrl}
+             />
+          </Route>
+          <Route path="/healtheducation">
+            <HealthEducation
              />
           </Route>
         </Switch>

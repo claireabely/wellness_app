@@ -34,17 +34,7 @@ export default class MenuItems extends Component {
       description={food.description}
     /><button  onClick={ ()=> { this.props.addUpdatedFood(food); }}>ADD TO CART</button>
   </Card>)})}
-                         <Card name="Card Name">
-    <Card.Grid style={gridStyle}>Content</Card.Grid>
-    <Card.Grid hoverable={false} style={gridStyle}>
-      Content
-    </Card.Grid>
-    <Card.Grid style={gridStyle}>Content</Card.Grid>
-    <Card.Grid style={gridStyle}>Content</Card.Grid>
-    <Card.Grid style={gridStyle}>Content</Card.Grid>
-    <Card.Grid style={gridStyle}>Content</Card.Grid>
-    <Card.Grid style={gridStyle}>Content</Card.Grid>
-  </Card>,
+  
                     {/* <table>
                     <thead>
                        

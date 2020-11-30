@@ -80,7 +80,7 @@ class YourOrder extends Component {
                   <td>{food.description}</td>
                   <td>{food.price}</td>
                   <td> </td>
-                  <td onClick={ () => this.props.handleDelete(index) }><DeleteOutlined />   </td>
+                  <td onClick={ () => this.props.handleDelete(index) }>🗑️  </td>
                 </tr>
                 </thead>
                 </table>
