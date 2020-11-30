@@ -16,7 +16,21 @@ class HealthEducation extends Component {
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">CBD<i class="material-icons right">close</i></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      <p>Muscle Recovery
+
+CBD can help with muscle recovery between workouts thanks to its powerful anti-inflammatory properties. Muscle soreness occurs after a tough workout because as you push your muscles, you create inflammation, and your body’s response to this creates soreness. CBD has been shown to decrease this inflammation, helping your muscles recover faster between workouts, and decreasing soreness.
+
+CBD can also help to reduce the stress hormone cortisol, which increases after strenuous exercise. Consistently high levels of cortisol have been linked to both poor muscle recovery and weight gain, so it’s extremely important to keep this stress hormone in balance!
+
+Sleep
+
+The most common reason for poor sleep quality is a restless mind. Studies have shown that CBD’s beneficial effect on anxiety levels can help calm your mind and aid in sleep.
+
+Not only can CBD help you fall asleep faster, but it may also help you get more out of the hours you do sleep. Some studies have shown it prevents tossing and during turning REM sleep, resulting in a more restful sleep.
+
+Immune Support
+
+Your body’s endocannabinoid system is closely related to your immune system because your immune cells have endocannabinoid receptors. When they are activated, it helps regulate your immune responses. The cannabinoids in CBD can also bind these receptors, helping to support your immune system in the same way as your body’s natural endocannabinoids.</p>
     </div>
     
   </div>

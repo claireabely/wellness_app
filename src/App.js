@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import MenuItems from './components/storeMenu/MenuItems'
 import Stores from './components/storeMenu/Stores'
+import Log from './components/Log'
 import HealthEducation from './components/storeMenu/HealthEducation'
 import Food from './components/storeMenu/Food'
 import YourOrder from './components/storeMenu/YourOrder'
@@ -11,6 +12,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect, NavLink} from 'react-r
 // import AppMenu from './components/AppMenu'
 import './App.css';
 import Cart from './components/Cart';
+
 
 class App extends Component {
   constructor(props) {
@@ -221,6 +223,13 @@ class App extends Component {
                 HEALTH ED.
               </NavLink>
             </li>
+            <li>
+              <NavLink 
+                to="/log" 
+                activeClassName="selected">
+                LOG
+              </NavLink>
+            </li>
           </ul>
           </div>
         </nav>
@@ -261,6 +270,10 @@ class App extends Component {
           </Route>
           <Route path="/healtheducation">
             <HealthEducation
+             />
+          </Route>
+          <Route path="/log">
+            <Log
              />
           </Route>
         </Switch>

@@ -37,7 +37,7 @@ class Cart extends Component {
     <h6 class="card-subtitle mb-2 text-muted">Menu Items:  {order.menuitemsName}</h6>
     <h6 class="card-subtitle mb-2 text-muted">Item ID#:  {order.item_id}</h6>
     <div class="card-image"><img src="https://static1.squarespace.com/static/5d37375de47a2a0001071628/t/5f88c03b33250d24070ed3a4/1606228858229/?format=1500w"/>
-    </div>
+    <img src={order.imgURL}/></div>
     <h6 class="card-subtitle mb-2 text-muted">Quantity:  {order.quantity}</h6>
     
 
