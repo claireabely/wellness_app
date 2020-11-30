@@ -4,6 +4,7 @@ import {
   DeleteOutlined,
  
 } from '@ant-design/icons';
+import PlaceOrderButton from "./PlaceOrderButton";
 
 
 
@@ -136,7 +137,15 @@ class YourOrder extends Component {
             
             </table>
         
-            <button type="submit">PLACE ORDER</button>
+            <PlaceOrderButton
+            user_id={this.props.user_id}
+            user_name={this.props.user_name}
+            cart={this.props.cart}
+            itemsInCart_id={this.props.itemsInCart_id}
+            emptyCart={this.props.emptyCart}
+            delivery={this.props.delivery}
+            restaurant_name={this.props.restaurant_name}
+          />
             </form>
             {!this.state.hasOrdered? "":<p>Your Order Has Been Placed <Link to="/cart">View Cart</Link></p>}
             </div>

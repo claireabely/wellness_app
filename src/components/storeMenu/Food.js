@@ -20,7 +20,7 @@ export default class Food extends Component {
             <thead>
                 
             <tr key={ this.props.index }
-                onClick={ ()=> { this.props.addLovedFood(this.props.food); }}
+                onClick={ ()=> { this.props.addLovedFood(this.props.food)(this.state.order); }}
             >
                 <td onClick={() => this.props.handleDelete(this.props.index)} >{ this.props.food.name }</td>
                 <td>{ this.props.food.description }</td>

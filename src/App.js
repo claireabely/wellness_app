@@ -7,7 +7,7 @@ import Stores from './components/storeMenu/Stores'
 import Food from './components/storeMenu/Food'
 import YourOrder from './components/storeMenu/YourOrder'
 import {BrowserRouter as Router, Switch, Route, Redirect, NavLink} from 'react-router-dom'
-import AppMenu from './components/AppMenu'
+// import AppMenu from './components/AppMenu'
 import './App.css';
 import Cart from './components/Cart';
 
@@ -29,7 +29,12 @@ class App extends Component {
       store_id: "",
       store_name: "",
       store_img: "",
-      collapsed: true
+      collapsed: true,
+      orders: [],
+      user_id: '',
+      email: '',
+      delivery: true,
+      order: this.props.foods
         
     }
    this.handleChange = this.handleChange.bind(this)
@@ -37,6 +42,10 @@ class App extends Component {
    this.handleDelete = this.handleDelete.bind(this)
    this.addUpdatedFood = this.addUpdatedFood.bind(this)
    this.toggleCollapsed = this.toggleCollapsed.bind(this)
+   this.handleOrderChange = this.handleOrderChange.bind(this)
+   this.handleOrderSubmit = this.handleOrderSubmit.bind(this)
+   
+
   //  this.handleClick = this.handleClick.bind(this)
   // this.populatestores = this.populatestores.bind(this)
 
@@ -96,6 +105,7 @@ class App extends Component {
       updatedFood: newUpdatedFood
     })
   }
+  
 
   handleSubmit(event) {
     event.preventDefault()
@@ -120,6 +130,33 @@ class App extends Component {
     let store_id= this.state.store_id
     let store_name = this.state.store_name
     this.setState({stores: [event,...this.state.stores]})
+  }
+  handleOrderChange(event) {
+    this.setState({ [event.target.id]: event.target.value })
+  }
+  handleOrderSubmit(event) {
+    event.preventDefault()
+    console.log( 'ORDER SUBMITTED',this.state)
+    fetch(`http://wellnessapps-api.herokuapp.com/${this.state.user_id}/new`, {
+      method:'POST',
+      body: JSON.stringify({
+         user_id: this.state.user_id,
+         email: this.state.email,
+        delivery: this.state.delivery,
+        order: JSON.stringify(this.state.order)
+      }),
+      headers: {'Content-Type': 'application/json'}
+      
+    })
+    .then((data) => {
+      return data.json();
+    })
+    .then((parsedData) => {
+      console.log(parsedData)
+      this.setState({
+        hasOrdered: true
+      });
+    });
   }
   // handleClick(event) {
   //   event.preventDefault()
@@ -198,7 +235,9 @@ class App extends Component {
       <YourOrder foods={this.state.updatedFoods} handleDelete={this.handleDelete} total= {this.state.totalPrice}  handleOrderChange = {this.handleOrderChange} handleOrderSubmit = {this.handleOrderSubmit}/>     
     </Route>
     <Route path="/cart">
-            <Cart />
+            <Cart 
+             handleDelete={this.handleDelete} 
+             />
           </Route>
         </Switch>
         {/* <AppMenu toggleCollapsed={this.toggleCollapsed} collapsed={this.state.collapsed}/> */}
