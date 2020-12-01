@@ -59,9 +59,13 @@ export default class UpdateOrderButton extends Component {
   render() {
     return (
       <div className="order-button-container">
-      <button id="update-button" onClick={this.handleClickUpdate}>
+      <button id="update-button" onClick={this.props.handleUpdate}>
           Edit Order
         </button>
+        {/* <div className="order-button-container">
+     <a href={"./menuitems"}><button id="update-button" >
+          Edit Order
+        </button></a>  */}
         <button id="delete-button" onClick={this.props.handleDelete}>
           CANCEL
         </button>

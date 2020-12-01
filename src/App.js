@@ -5,6 +5,7 @@ import Header from './components/Header'
 import MenuItems from './components/storeMenu/MenuItems'
 import Stores from './components/storeMenu/Stores'
 import Log from './components/Log'
+import Edit from './components/Edit'
 import HealthEducation from './components/storeMenu/HealthEducation'
 import Food from './components/storeMenu/Food'
 import YourOrder from './components/storeMenu/YourOrder'
@@ -234,6 +235,13 @@ class App extends Component {
                 LOG
               </NavLink>
             </li>
+            <li>
+              <NavLink 
+                to="/edit" 
+                activeClassName="selected">
+                EDIT ORDER
+              </NavLink>
+            </li>
           </ul>
           </div>
         </nav>
@@ -283,6 +291,10 @@ class App extends Component {
           </Route>
           <Route path="/log">
             <Log
+             />
+               </Route>
+          <Route path="/edit">
+            <Edit
              />
           </Route>
         </Switch>
