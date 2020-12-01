@@ -3,7 +3,10 @@ class Edit extends Component {
   render() {
     return (
       <div className="Edit">
-        This is the edit page.
+             { this.props.orders.map((orders, index) => {
+                 
+             })}
+   
       </div>
     )
   }
