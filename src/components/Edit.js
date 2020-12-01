@@ -4,8 +4,8 @@ class Edit extends Component {
     super(props)
     this.state = {
       order_id: '',
-      menuitems: '',
-      description: '',
+      itemName: '',
+      description: true,
       price: '',
       order: this.props.foods
          
@@ -51,71 +51,140 @@ class Edit extends Component {
     <th>Item</th>
     <th>Description</th>
     <th>Price</th>
+    <th></th>
 
   </tr>
   <tr>
    
-    <td><input onChange={this.handleOrderChange} id='items' value={this.state.menuitems} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='description' value={this.state.description} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='price' value={this.state.price} type ="textbox"/></td>
+    <td>Low Sugar Cleanse</td>
+    <td>Best for those trying to lower their sugar intake</td>
+    <td>4.75 </td>
+    <td><p>
+      <label>
+        <input type="checkbox" class="filled-in" />
+        <span></span>
+      </label>
+    </p></td>
   </tr>
     <tr>
     
-    <td><input onChange={this.handleOrderChange} id='items' value={this.state.menuitems} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='description' value={this.state.description} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='price' value={this.state.price} type ="textbox"/></td>
+    <td>Signature Cleanse</td>
+    <td>A combination of our fan-favorite cleansing greens & immune-boosting citrus.</td>
+    <td>20</td>
+    <td><p>
+      <label>
+        <input type="checkbox" class="filled-in" />
+        <span></span>
+      </label>
+    </p></td>
   </tr>
     <tr>
  
-    <td><input onChange={this.handleOrderChange} id='items' value={this.state.menuitems} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='description' value={this.state.description} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='price' value={this.state.price} type ="textbox"/></td>
+    <td>Green Cleanse</td>
+    <td>Best for amping up your greens intake to alkalize and refresh the body.</td>
+    <td>7.5</td>
+    <td><p>
+      <label>
+        <input type="checkbox" class="filled-in" />
+        <span></span>
+      </label>
+    </p></td>
   </tr>
     <tr>
    
-    <td><input onChange={this.handleOrderChange} id='items' value={this.state.menuitems} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='description' value={this.state.description} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='price' value={this.state.price} type ="textbox"/></td>
+    <td>Blue Magic Smoothie</td>
+    <td>Vanilla</td>
+    <td>2.7</td>
+    <td><p>
+      <label>
+        <input type="checkbox" class="filled-in" />
+        <span></span>
+      </label>
+    </p></td>
   </tr>
     <tr>
    
-    <td><input onChange={this.handleOrderChange} id='items' value={this.state.menuitems} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='description' value={this.state.description} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='price' value={this.state.price} type ="textbox"/></td>
+    <td>Beet Juice</td>
+    <td>Cleanse</td>
+    <td>8</td>
+    <td><p>
+      <label>
+        <input type="checkbox" class="filled-in" />
+        <span></span>
+      </label>
+    </p></td>
   </tr>
     <tr>
    
-    <td><input onChange={this.handleOrderChange} id='items' value={this.state.menuitems} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='description' value={this.state.description} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='price' value={this.state.price} type ="textbox"/></td>
+    <td>Charcoal Lemon Cayenne</td>
+    <td>Cleanse</td>
+    <td>6.25</td>
+    <td><p>
+      <label>
+        <input type="checkbox" class="filled-in" />
+        <span></span>
+      </label>
+    </p></td>
   </tr>
     <tr>
   
-    <td><input onChange={this.handleOrderChange} id='items' value={this.state.menuitems} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='description' value={this.state.description} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='price' value={this.state.price} type ="textbox"/></td>
+    <td>Imperfect Produce</td>
+    <td>Produce Bundle</td>
+    <td>6.25</td>
+    <td><p>
+      <label>
+        <input type="checkbox" class="filled-in" />
+        <span></span>
+      </label>
+    </p></td>
   </tr>
     <tr>
  
-    <td><input onChange={this.handleOrderChange} id='items' value={this.state.menuitems} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='description' value={this.state.description} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='price' value={this.state.price} type ="textbox"/></td>
+    <td>Smoothie Kit</td>
+    <td>Cacao</td>
+    <td>6.25</td>
+    <td><p>
+      <label>
+        <input type="checkbox" class="filled-in" />
+        <span></span>
+      </label>
+    </p></td>
   </tr>
     <tr>
    
-    <td><input onChange={this.handleOrderChange} id='items' value={this.state.menuitems} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='description' value={this.state.description} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='price' value={this.state.price} type ="textbox"/></td>
+    <td>Celery Juice</td>
+    <td>fresh and delicous</td>
+    <td>9</td>
+    <td><p>
+      <label>
+        <input type="checkbox" class="filled-in" />
+        <span></span>
+      </label>
+    </p></td>
   </tr>
     <tr>
  
-    <td><input onChange={this.handleOrderChange} id='items' value={this.state.menuitems} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='description' value={this.state.description} type ="textbox"/></td>
-    <td><input onChange={this.handleOrderChange} id='price' value={this.state.price} type ="textbox"/></td>
+    <td>Ginger Fireball</td>
+    <td>cleanse</td>
+    <td>10</td>
+    <td><p>
+      <label>
+        <input type="checkbox" class="filled-in" />
+        <span></span>
+      </label>
+    </p></td>
   </tr>
+  <tr>
+ 
+ <td></td>
+ <td><button>UPDATE ORDER</button></td>
+ <td></td>
+ <td></td>
+</tr>
    
 </table>
 </form>
+
       </div>
     )
   }
