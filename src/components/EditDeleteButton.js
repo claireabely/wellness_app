@@ -4,11 +4,11 @@ export default class UpdateOrderButton extends Component {
   constructor(props) {
     super(props);
 
-    this.this.props.handleUpdate = this.props.handleUpdate.bind(this);
-    this.props.handleDelete = this.props.handleDelete.bind(this);
+    this.handleClickUpdate = this.handleClickUpdate.bind(this);
+    this.handleClickDelete = this.handleClickDelete.bind(this);
   }
 
-  handleUpdate() {
+  handleClickUpdate() {
     let order_id = this.props._id;
     console.log(order_id);
     fetch(`http://wellnessapps-api.herokuapp.com/${this.props.order_id}/edit`, {
@@ -29,7 +29,7 @@ export default class UpdateOrderButton extends Component {
     // this.props.emptyCart();
   }
 
-  handleDelete() {
+  handleClickDelete() {
     console.log(this.props);
     let order_id = this.props._id;
     console.log(this.props.order_id);
@@ -59,17 +59,13 @@ export default class UpdateOrderButton extends Component {
   render() {
     return (
       <div className="order-button-container">
-      <button id="update-button" onClick={this.props.handleUpdate}>
-          Edit Order
-        </button>
-        {/* <div className="order-button-container">
-     <a href={"./menuitems"}><button id="update-button" >
-          Edit Order
-        </button></a>  */}
-        <button id="delete-button" onClick={this.props.handleDelete}>
-          CANCEL
-        </button>
-      </div>
-    );
-  }
-}
+      <a href={"./edit"}><button id="update-button" >
+           Edit Order
+         </button></a> 
+         <button id="delete-button" onClick={this.props.handleDelete}>
+           CANCEL
+         </button>
+       </div>
+     );
+   }
+ }
