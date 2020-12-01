@@ -14,18 +14,21 @@ class Cart extends Component {
     }
   }
   componentDidMount(){
-    fetch('http://wellnessapps-api.herokuapp.com/orders')
-    .then((data) => {
-      return data.json();
-    })
-    .then((parsedData) => {
-      console.log(parsedData)
-      this.setState({
-        orders: parsedData,
-      });
-      console.log("i popped this",this.state.orders.pop())
-    });
+this.getData()
   }
+getData = () =>{
+  fetch('http://wellnessapps-api.herokuapp.com/orders')
+  .then((data) => {
+    return data.json();
+  })
+  .then((parsedData) => {
+    console.log(parsedData)
+    this.setState({
+      orders: parsedData,
+    });
+    console.log("i popped this",this.state.orders.pop())
+  });
+}
 
   deletelastOrder = () => {
     let arr=this.state.orders

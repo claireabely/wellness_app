@@ -27,7 +27,6 @@ export default class UpdateOrderButton extends Component {
         console.log(parsedData);
       });
     // this.props.emptyCart();
-    this.props.showModal(1);
   }
 
   handleClickDelete() {
