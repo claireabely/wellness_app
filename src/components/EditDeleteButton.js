@@ -63,7 +63,7 @@ export default class UpdateOrderButton extends Component {
       <button id="update-button" onClick={this.handleClickUpdate}>
           Edit Order
         </button>
-        <button id="delete-button" onClick={this.handleClickDelete}>
+        <button id="delete-button" onClick={this.props.handleDelete}>
           CANCEL
         </button>
       </div>

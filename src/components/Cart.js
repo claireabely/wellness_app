@@ -23,9 +23,16 @@ class Cart extends Component {
       this.setState({
         orders: parsedData,
       });
+      console.log("i popped this",this.state.orders.pop())
     });
   }
 
+  deletelastOrder = () => {
+    let arr=this.state.orders
+    arr.pop()
+  this.setState({orders:arr})
+    console.log("last order deleted")
+  }
   render() {
    let orderlist=  this.state.orders.map((order, index) => {  
 
@@ -44,14 +51,10 @@ class Cart extends Component {
 
 <button>VIEW ORDER</button>
 <EditDeleteButton
-          user_id={this.props.user_id}
-          user_name={this.props.user_name}
+        handleDelete= {this.deletelastOrder}
           cart={this.props.cart}
           itemsInCart_id={this.props.itemsInCart_id}
-          emptyCart={this.props.emptyCart}
-          delivery={this.props.delivery}
-          restaurant_name={this.props.restaurant_name}
-          lastOrder={this.props.itemsInOrder}
+        
         />
   </div> </div>
     )

@@ -35,6 +35,7 @@ class App extends Component {
       collapsed: true,
       orders: [],
       cart: [],
+      user_name: "",
       cartTotal: 0,
       itemsInCart_id: [],
       user_id: '',
@@ -267,6 +268,9 @@ class App extends Component {
             <Cart 
               menuItems={this.state.menuItems}
               orders={this.state.orders}
+          cart={this.state.cart}
+          itemsInCart_id={this.state.itemsInCart_id}
+          emptyCart={this.state.emptyCart}
              handleDelete={this.handleDelete} 
              imgURL={this.state.imgUrl}
              itemsInCart_id={this.state.itemsInCart_id}

@@ -10,6 +10,23 @@ const gridStyle = {
   textAlign: 'center',
 };
 
+
+  
+  // componentDidMount(){
+  //   fetch('http://wellnessapps-api.herokuapp.com/stores')
+  //   .then((data) => {
+  //     return data.json();
+  //   })
+  //   .then((parsedData) => {
+  //     console.log(parsedData)
+  //     this.setState({
+  //       Stores: parsedData,
+  //     });
+  //   });
+
+  // }
+
+
 export default class MenuItems extends Component {
   constructor(props) {
     super(props);
@@ -31,7 +48,7 @@ export default class MenuItems extends Component {
 
                     
                     <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                    {this.props.menuItems.map((food, index) => {  
+                    {this.props.stores.map((food, index) => {  
          return(<Card style={{ width: 200, }} cover={ <img alt="example" src={food.imgURL}
       />
     }
@@ -48,22 +65,7 @@ export default class MenuItems extends Component {
     /><button  onClick={ ()=> { this.props.addUpdatedFood(food); }}>ADD TO CART</button>
   </Card>)})}
                        
-                    {/* <table>
-                    <thead>
-                       
-                        <tr>
-                        <th>Item</th>
-                        <th>Description</th>
-                        <th>Price</th>
                     
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.props.menuItems.map((food, index) => {
-                            return <Food food={food} index={index} handleDelete={this.props.handleDelete} addLovedFood={ this.props.addLovedFood }/>
-                        })}
-                    </tbody>
-                    </table> */}
                     </div>
                 </div>
                 
