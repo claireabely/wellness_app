@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Food from './Food'
-import { Card, Avatar } from 'antd';
+import { Card, } from 'antd';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 
 const { Meta } = Card;
